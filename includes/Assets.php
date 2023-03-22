@@ -11,6 +11,7 @@ class Assets {
      */
     public function __construct() {
         add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ] );
+        add_action( 'admin_enqueue_scripts', [ $this, 'register_assets' ] );
     }
 
     /**
@@ -24,7 +25,12 @@ class Assets {
                 'src'     => REACTION_BUTTON_ASSETS . '/js/frontend.js',
                 'version' => filemtime( REACTION_BUTTON_PATH . '/assets/js/frontend.js'),
                 'deps'    => [ 'jquery' ],
-            ]
+            ],
+            'reactionbutton-admin-script' => [
+                'src'     => REACTION_BUTTON_ASSETS . '/js/admin.js',
+                'version' => filemtime( REACTION_BUTTON_PATH . '/assets/js/admin.js'),
+                'deps'    => [ 'jquery' ],
+            ],
         ];
     }
 
@@ -38,7 +44,11 @@ class Assets {
             'reactionbutton-frontend-style' => [
                 'src'     => REACTION_BUTTON_ASSETS . '/css/frontend.css',
                 'version' => filemtime( REACTION_BUTTON_PATH . '/assets/css/frontend.css'),
-            ]
+            ],
+            'reactionbutton-admin-style' => [
+                'src'     => REACTION_BUTTON_ASSETS . '/css/admin.css',
+                'version' => filemtime( REACTION_BUTTON_PATH . '/assets/css/admin.css'),
+            ],
         ];
     }
 
