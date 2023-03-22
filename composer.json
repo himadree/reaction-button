@@ -1,0 +1,20 @@
+{
+    "name": "wp/reaction-button",
+    "description": "This plugin generate reaction button",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "autoload": {
+        "psr-4": {
+            "ReactionButton\\": "includes/"
+        },
+        "files": []
+    },
+    "authors": [
+        {
+            "name": "Himadree Shekhar Halder",
+            "email": "himadree12@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
