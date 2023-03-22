@@ -73,6 +73,9 @@ final class Reaction_Button {
      * @return void
      */
     public function init_plugin() {
+
+        new ReactionButton\Assets();
+        
         if( is_admin() ) {
             //
         }else {

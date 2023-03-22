@@ -21,6 +21,9 @@ class Shortcode {
      * @return string
      */
     public function render_shortcode( $atts, $content = '' ) {
-        return 'Hello form Shortcode';
+        wp_enqueue_style( 'reactionbutton-frontend-style' );
+        wp_enqueue_script( 'reactionbutton-frontend-script' );
+
+        return '<div class="reaction-button-style">Hello form Shortcode</div>';
     }
 }
