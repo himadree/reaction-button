@@ -68,12 +68,16 @@ final class Reaction_Button {
     }
 
     /**
-     * Undocumented function
+     * Initalize the plugin class
      *
      * @return void
      */
     public function init_plugin() {
-        //
+        if( is_admin() ) {
+            //
+        }else {
+            new ReactionButton\Frontend();
+        }
     }
 
     /**
