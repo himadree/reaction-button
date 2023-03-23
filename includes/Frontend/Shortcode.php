@@ -24,6 +24,9 @@ class Shortcode {
         wp_enqueue_style( 'reactionbutton-frontend-style' );
         wp_enqueue_script( 'reactionbutton-frontend-script' );
 
-        return '<div class="reaction-button-style">Hello form Shortcode</div>';
+        ob_start();
+        include __DIR__ . '/views/reaction-button.php';
+
+        return ob_get_clean();
     }
 }
