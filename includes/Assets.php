@@ -24,6 +24,11 @@ class Assets {
             'reactionbutton-frontend-script' => [
                 'src'     => REACTION_BUTTON_ASSETS . '/js/frontend.js',
                 'version' => filemtime( REACTION_BUTTON_PATH . '/assets/js/frontend.js'),
+                'deps'    => [ 'jquery', 'js-cookie' ],
+            ],
+            'js-cookie' => [
+                'src'     => REACTION_BUTTON_ASSETS . '/js/js.cookie.min.js',
+                'version' => filemtime( REACTION_BUTTON_PATH . '/assets/js/js.cookie.min.js'),
                 'deps'    => [ 'jquery' ],
             ],
             'reactionbutton-admin-script' => [
@@ -73,5 +78,16 @@ class Assets {
 
             wp_register_style( $handle, $style['src'], $deps, $style['version'] );
         }
+
+        wp_enqueue_style( 'reactionbutton-frontend-style' );
+        wp_enqueue_script( 'js-cookie' );
+        wp_enqueue_script( 'reactionbutton-frontend-script' );
+
+
+
+        $localize = array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+		);
+        wp_localize_script( 'reactionbutton-frontend-script', 'reactionButtonData', $localize );
     }
 }

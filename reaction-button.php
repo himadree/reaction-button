@@ -76,10 +76,12 @@ final class Reaction_Button {
 
         new ReactionButton\Assets();
 
+        new ReactionButton\Frontend();
+
         if( is_admin() ) {
             new ReactionButton\Admin();
         }else {
-            new ReactionButton\Frontend();
+            
         }
     }
 

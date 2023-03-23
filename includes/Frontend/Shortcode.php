@@ -24,9 +24,9 @@ class Shortcode {
         wp_enqueue_style( 'reactionbutton-frontend-style' );
         wp_enqueue_script( 'reactionbutton-frontend-script' );
 
-        ob_start();
-        include __DIR__ . '/views/reaction-button.php';
+        // ob_start();
+        // include __DIR__ . '/views/reaction-button.php';
 
-        return ob_get_clean();
+        // return ob_get_clean();
     }
 }

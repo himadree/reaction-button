@@ -4,9 +4,14 @@ namespace ReactionButton;
 /**
  * Frontend handler class
  */
-class Frontend{
+class Frontend {
 
+	/**
+	 * Class constructor
+	 */
     public function __construct(){
-        new Frontend\Shortcode();
-    }
+
+		new Frontend\ReactionContent();
+	}
+    
 }
