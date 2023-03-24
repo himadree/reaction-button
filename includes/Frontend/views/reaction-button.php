@@ -1,7 +1,7 @@
 <ul>
     <li class="reaction-button-list" data-reaction="love">
         <a href="">
-            <em><?php esc_html_e( 'Love', 'reaction-button' ); ?></em>
+            <em><?php esc_html_e( 'Smile', 'reaction-button' ); ?></em>
             <img src="<?php echo REACTION_BUTTON_ASSETS . '/images/love.png' ?>" />
             <span>0</span>
         </a>
