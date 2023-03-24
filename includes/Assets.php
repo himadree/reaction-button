@@ -86,7 +86,8 @@ class Assets {
 
 
         $localize = array(
-			'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'nonce'    => wp_create_nonce('ajax-nonce'),
 		);
         wp_localize_script( 'reactionbutton-frontend-script', 'reactionButtonData', $localize );
     }

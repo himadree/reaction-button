@@ -55,12 +55,8 @@
           var elem     = $( this );
           var unreact  = ( elem.hasClass("clicked") ? true : false );
           var reaction = elem.data().reaction;
-          
-  
-          $.post(wdAjaxUrl, { postid: self.id, action: 'rb_reaction', reaction: reaction, unreact: unreact }, function(data) {
+          $.post(wdAjaxUrl, { postid: self.id, nonce: reactionButtonData.nonce, action: 'rb_reaction', reaction: reaction, unreact: unreact }, function(data) {
               // log(data);
-          });
-  
           var cookieKey = 'wd_reacted_' + reaction + '_' + self.id;
 
   
@@ -76,7 +72,6 @@
   
           var howMany = parseInt( elem.find('span').text() );
   
-        //   log( howMany)
   
           if ( howMany > 0 ) {
             if (elem.hasClass( "clicked" ) ) {
@@ -88,8 +83,11 @@
             howMany = 1;
           }
           elem.find( 'span' ).text( howMany );
+
+        });
   
         }
+        
         self.elem.find( 'li' ).click( reactButton );
       }
 

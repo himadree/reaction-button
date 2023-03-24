@@ -12,7 +12,7 @@ class Frontend {
     public function __construct(){
 		
 		add_action( 'wp_ajax_rb_reaction', [ $this,'reaction_button_react' ] );
-		add_action( 'wp_ajax_nopriv_rb_reaction', [ $this,'reaction_button_react' ] );
+		// add_action( 'wp_ajax_nopriv_rb_reaction', [ $this,'reaction_button_react' ] );
 
 		add_action( 'wp_ajax_rb_get_reaction', [ $this,'get_reaction_button_react' ] );
 		add_action( 'wp_ajax_nopriv_rb_get_reaction', [ $this,'get_reaction_button_react' ] );
@@ -43,9 +43,17 @@ class Frontend {
 	 * @return void
 	 */
 	public function reaction_button_react() {
-		// if( ! is_user_logged_in() ){
-		// 	return;
-		// }
+
+		//Nonce check
+		if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+			die ( 'die!');
+		}
+
+		//User login check
+		if( ! is_user_logged_in() ){
+			return;
+		}
+
 		if ( isset( $_POST["postid"] ) ) {
 			$post_id  = intval( $_POST["postid"] );
 			$reaction = $_POST["reaction"];
