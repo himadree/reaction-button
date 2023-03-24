@@ -20,13 +20,13 @@ class Shortcode {
      * 
      * @return string
      */
-    public function render_shortcode( $atts, $content = '' ) {
-        wp_enqueue_style( 'reactionbutton-frontend-style' );
-        wp_enqueue_script( 'reactionbutton-frontend-script' );
+    public function render_shortcode() {
+        $obj = new ReactionContent();
 
-        // ob_start();
-        // include __DIR__ . '/views/reaction-button.php';
+        $options = get_option('rns_settings');
+		$post_id = get_the_ID();
+		$post_object = $obj->get_post_objects($post_id);
+		return $obj->reaction_button_wrapper($options, $post_object);
 
-        // return ob_get_clean();
     }
 }
