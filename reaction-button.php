@@ -78,6 +78,8 @@ final class Reaction_Button {
 
         new ReactionButton\Frontend();
 
+        new ReactionButton\Widget();
+
         if( is_admin() ) {
             new ReactionButton\Admin();
         }else {
