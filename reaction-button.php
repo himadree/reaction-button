@@ -80,10 +80,10 @@ final class Reaction_Button {
 
         new ReactionButton\Widget();
 
+        new ReactionButton\Block();
+
         if( is_admin() ) {
             new ReactionButton\Admin();
-        }else {
-            
         }
     }
 
@@ -114,3 +114,8 @@ function reaction_button() {
 
 // Plugin start
 reaction_button();
+
+
+
+
+// Hook the enqueue functions into the editor
