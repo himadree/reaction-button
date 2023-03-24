@@ -51,11 +51,10 @@ class Admin {
             
             foreach ( $meta_keys as $meta_key ) {
                 $amount[]   = get_post_meta( $post_id, $meta_key, true ) ? intval( get_post_meta( $post_id, $meta_key, true ) ) : 0;
-                
             }
             ?>
             <ul>
-                <li><?php printf( __( "Slime (%d)", 'reaction-button'), $amount[0] );?></li>
+                <li><?php printf( __( "Smile (%d)", 'reaction-button'), $amount[0] );?></li>
                 <li><?php printf( __( "Straight(%d)", 'reaction-button'), $amount[1] ); ?></li>
                 <li><?php printf( __( "Sad(%d)", 'reaction-button'), $amount[2] ); ?></li>
             </ul>
@@ -94,11 +93,10 @@ class Admin {
             
             foreach ( $meta_keys as $meta_key ) {
                 $amount[]   = get_post_meta( $post_id, $meta_key, true ) ? intval( get_post_meta( $post_id, $meta_key, true ) ) : 0;
-                
             }
             ?>
             <ul>
-                <li><?php printf( __( "Slime (%d)", 'reaction-button'), $amount[0] );?></li>
+                <li><?php printf( __( "Smile (%d)", 'reaction-button'), $amount[0] );?></li>
                 <li><?php printf( __( "Straight(%d)", 'reaction-button'), $amount[1] ); ?></li>
                 <li><?php printf( __( "Sad(%d)", 'reaction-button'), $amount[2] ); ?></li>
             </ul>
