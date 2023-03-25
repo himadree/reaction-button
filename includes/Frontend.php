@@ -56,8 +56,8 @@ class Frontend {
 
 		if ( isset( $_POST["postid"] ) ) {
 			$post_id  = intval( $_POST["postid"] );
-			$reaction = $_POST["reaction"];
-			$unreact  = $_POST["unreact"];
+			$reaction = sanitize_text_field( $_POST["reaction"] );
+			$unreact  = sanitize_text_field( $_POST["unreact"] );
 		}
 
 		$amount = $this->get_reaction_amount( $reaction, $post_id );
