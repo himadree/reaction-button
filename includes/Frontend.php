@@ -86,7 +86,9 @@ class Frontend {
 
 		$response = [];
 
-		foreach( $_POST["posts"] as $id ) {
+		// print_r($_POST["posts"]);
+
+		foreach( (array) $_POST["posts"] as $id ) {
 			$id   = intval( $id );
 			$meta = get_post_meta( $id );
 			$post = [];
