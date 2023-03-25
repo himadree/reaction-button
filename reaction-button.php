@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Reaction Button
- * Plugin URI: https://reaction.com
- * Description: This plugin generate reaction button
+ * Plugin URI: https://github.com/himadree/reaction-button
+ * Description: This plugin reaction button displays three reaction icons. 
  * Version: 1.0.0
  * Author: Himadree
- * Author URI: https://himadree.com
+ * Author URI: https://github.com/himadree/
  * License: GPL v2 or later
  * Text Domain: reaction-button
  * Domain Path: /languages
@@ -14,6 +14,8 @@
 if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
+
+require_once __DIR__ . '/vendor/autoload.php';
 
 /**
  * Plugin main class
@@ -66,12 +68,25 @@ final class Reaction_Button {
     }
 
     /**
-     * Undocumented function
+     * Initalize the plugin class
      *
      * @return void
      */
     public function init_plugin() {
-        //
+
+        new ReactionButton\Assets();
+
+        new ReactionButton\Frontend();
+
+        if ( in_array( 'elementor/elementor.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+            new ReactionButton\Widget();
+        }
+
+        new ReactionButton\Block();
+
+        if( is_admin() ) {
+            new ReactionButton\Admin();
+        }
     }
 
     /**
