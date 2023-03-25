@@ -78,7 +78,9 @@ final class Reaction_Button {
 
         new ReactionButton\Frontend();
 
-        new ReactionButton\Widget();
+        if ( in_array( 'elementor/elementor.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+            new ReactionButton\Widget();
+        }
 
         new ReactionButton\Block();
 

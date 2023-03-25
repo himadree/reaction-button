@@ -46,7 +46,7 @@ class Frontend {
 
 		//Nonce check
 		if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
-			die ( 'die!');
+			wp_die ( 'die!');
 		}
 
 		//User login check
