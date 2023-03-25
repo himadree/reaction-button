@@ -28,7 +28,7 @@ class Menu {
 	}
 
     /**
-     * Undocumented function
+     * Enqueue admin style
      *
      * @return void
      */
@@ -37,7 +37,7 @@ class Menu {
     }
     
     /**
-     * Undocumented function
+     * Render setting form
      *
      * @return void
      */

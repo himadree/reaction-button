@@ -15,7 +15,7 @@ class Assets {
     }
 
     /**
-     * Undocumented function
+     * All scripts
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class Assets {
     }
 
     /**
-     * Undocumented function
+     * All styles
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class Assets {
     }
 
     /**
-     * Undocumented function
+     * Register scripts and styles
      *
      * @return void
      */
@@ -82,8 +82,6 @@ class Assets {
         wp_enqueue_style( 'reactionbutton-frontend-style' );
         wp_enqueue_script( 'js-cookie' );
         wp_enqueue_script( 'reactionbutton-frontend-script' );
-
-
 
         $localize = array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),

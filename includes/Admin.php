@@ -44,7 +44,7 @@ class Admin {
         
         if( 'reaction' == $columns ){
             $meta_keys = [
-                'wd_reaction_love',
+                'wd_reaction_smile',
                 'wd_reaction_straight',
                 'wd_reaction_sad',
             ];
@@ -86,7 +86,7 @@ class Admin {
         
         if( 'reaction' == $columns ){
             $meta_keys = [
-                'wd_reaction_love',
+                'wd_reaction_smile',
                 'wd_reaction_straight',
                 'wd_reaction_sad',
             ];

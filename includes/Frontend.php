@@ -55,7 +55,7 @@ class Frontend {
 		}
 
 		if ( isset( $_POST["postid"] ) ) {
-			$post_id  = intval( $_POST["postid"] );
+			$post_id  = intval( sanitize_text_field( $_POST["postid"] ) );
 			$reaction = sanitize_text_field( $_POST["reaction"] );
 			$unreact  = sanitize_text_field( $_POST["unreact"] );
 		}

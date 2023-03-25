@@ -11,9 +11,7 @@ class Widget {
     }
 
     /**
-     * Undocumented function
-     *
-     * @param [type] $widgets_manager
+     * Register custom elementor widget for reaction button
      * 
      * @return void
      */

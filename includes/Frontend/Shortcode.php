@@ -23,7 +23,7 @@ class Shortcode {
     public function render_shortcode() {
         $obj = new ReactionContent();
 
-        $options = get_option('rns_settings');
+		$options = get_option( 'rb_enable_single' );
 		$post_id = get_the_ID();
 		$post_object = $obj->get_post_objects($post_id);
 		return $obj->reaction_button_wrapper($options, $post_object);
