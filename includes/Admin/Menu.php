@@ -86,9 +86,9 @@ class Menu {
             ],
             [
                 'section' => 'reaction_button_section',
-                'label' => 'Disable on every single posts',
-                'id' => 'rb_enable_single',
-                'type' => 'checkbox',
+                'label'   => __( 'Disable on every single posts', 'reaction-button' ),
+                'id'      => 'rb_enable_single',
+                'type'    => 'checkbox',
             ],
         ];
 
