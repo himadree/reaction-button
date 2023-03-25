@@ -116,8 +116,3 @@ function reaction_button() {
 
 // Plugin start
 reaction_button();
-
-
-
-
-// Hook the enqueue functions into the editor

@@ -1,7 +1,7 @@
 (function () {
 
     const reactionButtonConfig = {
-        title: 'Reaction Button',
+        title: blockData.block_lable,
         icon: 'smiley',
         category: 'common',
         edit() {
@@ -17,7 +17,7 @@
             );
         }
     };
-    
+
     wp.blocks.registerBlockType( 'reaction-button-blocks/reaction-button', reactionButtonConfig );
 
 })();

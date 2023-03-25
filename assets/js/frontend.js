@@ -1,8 +1,6 @@
 (function($) {
     $(document).ready(function() {
   
-      const{log} = console;
-  
       var wdAjaxUrl = reactionButtonData.ajax_url;
   
       /**
@@ -56,7 +54,7 @@
           var unreact  = ( elem.hasClass("clicked") ? true : false );
           var reaction = elem.data().reaction;
           $.post(wdAjaxUrl, { postid: self.id, nonce: reactionButtonData.nonce, action: 'rb_reaction', reaction: reaction, unreact: unreact }, function(data) {
-              // log(data);
+
           var cookieKey = 'wd_reacted_' + reaction + '_' + self.id;
 
   
@@ -87,7 +85,7 @@
         });
   
         }
-        
+
         self.elem.find( 'li' ).click( reactButton );
       }
 
@@ -99,7 +97,6 @@
         var postIds = [];
 
         $.get(wdAjaxUrl, { action: 'rb_html_icon' }, function( response ) {
-        //   log(response);
   
           $('.reaction_button').each( function() {
             this.addEventListener("touchstart", function() {}, true);//not work
@@ -114,10 +111,8 @@
             },
   
             function(response) {
-                
-
               $.each(posts, function(index, post) {
-                  var id = post.data('postId');
+                var id = post.data('postId');
                 new ReactionButton(post, response[id])
               });
             }

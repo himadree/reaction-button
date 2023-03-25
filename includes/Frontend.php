@@ -91,7 +91,7 @@ class Frontend {
 			$meta = get_post_meta( $id );
 			$post = [];
 
-			$reactions = array( "love", "straight", "sad" );
+			$reactions = array( "smile", "straight", "sad" );
 
 			foreach( $reactions as $reaction ) {
 				$post[ $reaction ] = isset( $meta[ "wd_reaction_".$reaction ] ) ? intval( $meta[ "wd_reaction_".$reaction ][ 0 ] ) : 0;

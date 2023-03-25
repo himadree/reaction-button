@@ -5,7 +5,7 @@
 ?>
 
 <ul>
-    <li class="reaction-button-list" data-reaction="love">
+    <li class="reaction-button-list" data-reaction="smile">
         <a href="">
             <em><?php echo esc_html( $label_smile ); ?></em>
             <img src="<?php echo REACTION_BUTTON_ASSETS . '/images/love.png' ?>" />

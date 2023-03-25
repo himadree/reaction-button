@@ -25,6 +25,11 @@ class Block {
             filemtime( plugin_dir_path( __FILE__ ) ) 
         );
 
+        $localize = array(
+            'block_lable' => esc_html__( 'Reaction Button', 'reaction-button' ),
+		);
+        wp_localize_script( 'reaction-button-blocks/editor-script', 'blockData', $localize );
+
         register_block_type('reaction-button-blocks/block-library', array(
             'editor_script' => [
                 'reaction-button-blocks/editor-script',
