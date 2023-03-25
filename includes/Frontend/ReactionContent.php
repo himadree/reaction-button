@@ -43,14 +43,11 @@ class ReactionContent {
      */
 	public function reaction_button_html_content( $content ) {
 
-		$options            = get_option( 'reaction_button_settings' );
-		$show_on_every_post = isset( $options['rns_auto_enable'] ) ? $options['rns_auto_enable'] : 'on';
+		$options            = get_option( 'rb_enable_single' );
+		$rb_on_every_post = isset( $options ) ? $options : null;
 		$post_id            = get_the_ID();
-		$enabled            = get_post_meta( $post_id, 'rns_enable', true );
-		$enable_only_single = isset( $options['rns_enable_only_single'] ) ? $options['rns_enable_only_single'] : 'off';
 
-		if ( ! is_page() && ( $enabled=="on" || ( empty( $enabled ) && $show_on_every_post=='on' ) ) && ( is_single() || ( ! is_single() && $enable_only_single != 'on' ) ) ) {
-			
+		if ( is_single() && ( $rb_on_every_post == null ) ) {
             $post_object = $this->get_post_objects($post_id);
 			$plugin = $this->reaction_button_wrapper( $options, $post_object );
 			$content .= $plugin;

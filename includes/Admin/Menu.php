@@ -84,7 +84,12 @@ class Menu {
                 'id'      => 'rb_sad',
                 'type'    => 'text',
             ],
-            
+            [
+                'section' => 'reaction_button_section',
+                'label' => 'Disable on every single posts',
+                'id' => 'rb_enable_single',
+                'type' => 'checkbox',
+            ],
         ];
 
 		foreach( $fields as $field ){
@@ -110,8 +115,8 @@ class Menu {
 
 		switch ( $field['type'] ) {
             case 'checkbox':
-                printf('<input %s id="%s" name="%s" type="checkbox" value="1">',
-                    $value === '1' ? 'checked' : '',
+                printf('<input %s id="%s" name="%s" type="checkbox" value="off">',
+                    $value === 'off' ? 'checked' : '',
                     $field['id'],
                     $field['id']
                 );
@@ -125,7 +130,7 @@ class Menu {
 					$value
 				);
 		}
-        
+
 		if( isset($field['desc']) ) {
 			if( $desc = $field['desc'] ) {
 				printf( '<p class="description">%s </p>', $desc );

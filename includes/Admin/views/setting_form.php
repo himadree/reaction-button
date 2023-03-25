@@ -1,6 +1,10 @@
 <div class="wrap">
     <h1><?php esc_html_e( 'Reaction Button Setting', 'reaction-button' ); ?></h1>
     <div class="rd-shortcode-view">
+        <?php 
+        $optionsA            = get_option( 'rb_enable_single' );
+		print_r($optionsA);
+        ?>
         <h4><?php esc_html_e( 'Use this shortcode to deploy your reaction buttons in a widget, or editor.', 'reaction-button' ); ?></h4>
         <h4><code><?php esc_html_e( '[reaction-button]', 'reaction-button' ); ?></code></h4>
         
